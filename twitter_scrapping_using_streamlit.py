@@ -52,23 +52,23 @@ Ending_date = st.date_input("Tweets upto(Ending date):", value=date.today())
 Tweets_counts = st.number_input("How much tweets you want to scrape(max 10000):", max_value=10000,
                                 value=100)
 
-tab1, tab2, tab3, tab4 = st.tabs(["Scrape", "Upload", "Download", "Saved"])
+col1, col2, col3, col4 = st.tabs(["Scrape", "Upload", "Download", "Saved"])
 
 # Scraping the data and displaying it
-with tab1:
+with col1:
     if st.button("Show"):
         Tweets = scraped_data(Keyword, Tweets_counts, Starting_date, Ending_date)
         st.dataframe(Tweets)
 
 # Uploading the scraped data in database
-with tab2:
+with col2:
     if st.button("Upload"):
         Tweets = scraped_data(Keyword, Tweets_counts, Starting_date, Ending_date)
         upload_to_db = upload(Tweets, Keyword)
         st.success("Tweets are uploaded Successfully")
 
 # Downloading the scraped data in deirable formats:
-with tab3:
+with col3:
     # Downloading csv file
     col1, col2 = st.columns(2)
     Tweets = scraped_data(Keyword, Tweets_counts, Starting_date, Ending_date)
@@ -79,7 +79,7 @@ with tab3:
     Tweets = scraped_data(Keyword, Tweets_counts, Starting_date, Ending_date)
     Tweetsjson = Tweets.to_json(orient='records')
     col2.download_button("Download JSON file", data=Tweetsjson, file_name=f'{Keyword}.json', mime='application/json')
-with tab4:
+with col4:
     # Dispalying
     st.write('Uploaded Datasets: ')
     for i in db.list_collection_names():
