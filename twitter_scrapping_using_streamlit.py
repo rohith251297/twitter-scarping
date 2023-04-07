@@ -29,7 +29,7 @@ def scraped_data(keyword, limit, start_date, end_date):
 # Connecting to MongoClient
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 # creating database
-db = client["Twitter1"]
+db = client["TwitterData"]
 
 
 def upload(df, keyword):
