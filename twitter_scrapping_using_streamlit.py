@@ -44,12 +44,12 @@ def upload(df, keyword):
 # Input features of web app:
 Keyword = st.text_input("Enter the keyword to scrape from Twitter", value="Data Scientist")
 
-Starting_date = st.date_input("Tweets belonging from(starting date):", value=(date.today()
+Starting_date = st.date_input("starting date: ", value=(date.today()
                                                                               - timedelta(days=100)))
 
-Ending_date = st.date_input("Tweets upto(Ending date):", value=date.today())
+Ending_date = st.date_input("Ending date :", value=date.today())
 
-Tweets_counts = st.number_input("How much tweets you want to scrape(max 10000):", max_value=10000,
+Tweets_counts = st.number_input("How much tweets you want to scrape: ", max_value=10000,
                                 value=100)
 
 col1, col2, col3, col4 = st.tabs(["Scrape", "Upload", "Download", "Saved"])
