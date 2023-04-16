@@ -10,8 +10,9 @@ OVERVIEW: I used streamlit to design a GUI that has the features I've listed bel
 
 1.to enter the keword or hashtag to be searched
 2.to select the starting date and ending date of the tweets to be searched
-3.it has a button to upload the data into database
-4.finally it as a button to dwonload the data into csv or json format
+3.to select the range of the data to be searched 
+4.it has four columns with scrape,upload,download and saved 
+  
 
 WORK FLOW:
 
