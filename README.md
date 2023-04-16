@@ -26,7 +26,7 @@ Step3:
 With pymongo, the database connection is made. If a user chooses to upload data, a new collection is formed and the data is uploaded there.
 
 Step4:
-All of the collections that are uploaded to the database are displayed in a separate sidebar. We can view the documents in any collection by clicking it.
+All of the collections that are uploaded to the database are displayed in a separate column named saved. We can view the documents in any collection by clicking it.
 
 
 
